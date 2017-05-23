@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="jp.co.kksoft.connectoracle.SqlMapper003">
+	<resultMap id="JOBSResult003" type="jp.co.kksoft.dbdto.InitResultDto">
+		<result column="REGION_ID" property="REGION_ID" />
+		<result column="REGION_NAME" property="REGION_NAME" />
+		<result column="COUNTRY_ID" property="COUNTRY_ID" />
+		<result column="COUNTRY_NAME" property="COUNTRY_NAME" />
+		<result column="LOCATION_ID" property="LOCATION_ID" />
+		<result column="STREET_ADDRESS" property="STREET_ADDRESS" />
+		<result column="POSTAL_CODE" property="POSTAL_CODE" />
+		<result column="CITY" property="CITY" />
+		<result column="STATE_PROVINCE" property="STATE_PROVINCE" />
+		<result column="DEPARTMENT_ID" property="DEPARTMENT_ID" />
+		<result column="DEPARTMENT_NAME" property="DEPARTMENT_NAME" />
+		<result column="MANAGER_ID" property="MANAGER_ID" />
+	</resultMap>
+	<select id="JOBS004" resultMap="JOBSResult003" >
+		select
+		REGIONS.REGION_ID,
+		COUNTRIES.COUNTRY_ID,
+		LOCATIONS.LOCATION_ID,
+		DEPARTMENTS.DEPARTMENT_ID
+		from
+		REGIONS,COUNTRIES,LOCATIONS,DEPARTMENTS
+		where
+		REGIONS.REGION_ID = COUNTRIES.REGION_ID and
+		COUNTRIES.COUNTRY_ID = LOCATIONS.COUNTRY_ID and
+		LOCATIONS.LOCATION_ID = DEPARTMENTS.LOCATION_ID
+	</select>
+</mapper>
