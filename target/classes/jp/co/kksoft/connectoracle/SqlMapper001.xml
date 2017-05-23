@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="jp.co.kksoft.connectoracle.SqlMapper001">
+	<resultMap id="JOBSResult001" type="jp.co.kksoft.dbdto.JobsResultDto">
+		<result column="JOB_ID" property="JOB_ID" />
+		<result column="JOB_TITLE" property="JOB_TITLE" />
+		<result column="MIN_SALARY" property="MIN_SALARY" />
+		<result column="MAX_SALARY" property="MAX_SALARY" />
+	</resultMap>
+	<select id="JOBS001" resultMap="JOBSResult001">
+		select
+		JOB_ID ,
+		JOB_TITLE ,
+		MIN_SALARY ,
+		MAX_SALARY
+		from
+		JOBS
+		ORDER BY
+		MIN_SALARY
+	</select>
+	<select id="JOBS002" resultMap="JOBSResult001" parameterType="int">
+		select
+		JOB_ID ,
+		JOB_TITLE ,
+		MIN_SALARY ,
+		MAX_SALARY
+		from
+		JOBS
+		where
+		MIN_SALARY = #{min_salary} or
+		MAX_SALARY = #{min_salary}
+		ORDER BY
+		MIN_SALARY
+	</select>
+	</mapper>

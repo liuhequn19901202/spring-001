@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="jp.co.kksoft.connectoracle.SqlMapper002">
+	<resultMap id="JOBSResult002" type="jp.co.kksoft.dbdto.EmployeesDto">
+		<result column="EMPLOYEE_ID" property="EMPLOYEE_ID" />
+		<result column="FIRST_NAME" property="FIRST_NAME" />
+		<result column="LAST_NAME" property="LAST_NAME" />
+		<result column="EMAIL" property="EMAIL" />
+		<result column="PHONE_NUMBER" property="PHONE_NUMBER" />
+		<result column="HIRE_DATE" property="HIRE_DATE" />
+		<result column="JOB_ID" property="JOB_ID" />
+		<result column="SALARY" property="SALARY" />
+		<result column="COMMISSION_PCT" property="COMMISSION_PCT" />
+		<result column="MANAGER_ID" property="MANAGER_ID" />
+		<result column="DEPARTMENT_ID" property="DEPARTMENT_ID" />
+	</resultMap>
+	<select id="JOBS003" resultMap="JOBSResult002" parameterType="string">
+		select
+		EMPLOYEE_ID,
+		FIRST_NAME,
+		LAST_NAME,
+		EMAIL,
+		PHONE_NUMBER,
+		HIRE_DATE,
+		JOB_ID,
+		SALARY,
+		COMMISSION_PCT,
+		MANAGER_ID,
+		DEPARTMENT_ID
+		from
+		EMPLOYEES
+		where
+		JOB_ID = #{str}
+		ORDER BY
+		EMPLOYEE_ID
+	</select>
+</mapper>
