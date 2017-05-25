@@ -26,9 +26,9 @@
 </script>
 </head>
 <body style="background-color: #515356" align="center">
-	<h1 style="color: #ffffff">JOBS詳細</h2>
-	<h2 style="color: #ffffff">検索金額を入力してください</h3>
-	<h3 style="color: #FF0000">${message}</h2>
+	<h1 style="color: #ffffff">JOBS詳細</h1>
+	<h2 style="color: #ffffff">検索金額を入力してください</h2>
+	<h3 style="color: #FF0000">${message}</h3>
 
 	<form:form modelAttribute="testview" onSubmit="return check();">
 		<form:input path="number" type="text" id="text1" />
@@ -36,7 +36,7 @@
 		<div style="height: 5px"></div>
 		<div style="color: #FF0000; font-size: 12px">${message1}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
 		<div style="height: 15px"></div>
-		<div id="text2" style="color: #FF0000; font-size: 12px; width: 92%"></div>
+		<div id="text2" style="color: #FF0000; font-size: 12px; width: 93%"></div>
 		<div style="height: 15px"></div>
 		<table border="1" style="color: #ffffff; width: 50%" align="center">
 			<tr>
