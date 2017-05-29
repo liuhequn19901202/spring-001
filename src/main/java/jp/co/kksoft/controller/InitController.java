@@ -24,6 +24,16 @@ public class InitController {
 		return "init";
 	}
 
+
+	@RequestMapping(value = "test004", method = RequestMethod.GET)
+	public String test0004Method(Model model) {
+		//InitView initview = new InitView();
+		//List<InitResultBean> init=serviceinit.getTableJobs03();
+		//model.addAttribute("init", initview);
+		//model.addAttribute("init", init);
+		return "init";
+	}
+
 //	@RequestMapping(value = "test003", method = RequestMethod.POST)
 //	public String getFormInfo( Model model ,TestModelView testview ) {
 //
